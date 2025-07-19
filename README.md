@@ -8,11 +8,13 @@ This repository contains utilities to work with the KAIST multispectral pedestri
    ```bash
    pip install -r requirements.txt
    ```
-2. Download and extract the dataset:
+2. Download and extract the dataset (from the authors' OneDrive mirror):
    ```bash
    python -m src.kaist.download
    ```
-   This will place the files under `data/kaist`.
+   This will place the files under `data/kaist`. If the download fails,
+   follow the instructions at <https://soonminhwang.github.io/rgbt-ped-detection/>
+   to obtain the archive manually.
 3. Convert annotations to YOLO format:
    ```bash
    python -m src.kaist.convert
