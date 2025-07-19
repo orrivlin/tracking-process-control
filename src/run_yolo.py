@@ -1,4 +1,4 @@
-"""Run YOLOv8 inference on the KAIST dataset."""
+"""Run YOLOv8 inference on the FLIR ADAS dataset."""
 
 from pathlib import Path
 from ultralytics import YOLO
@@ -17,4 +17,4 @@ def run_inference(model_path: str, data_dir: str, output: str = "predictions") -
 
 
 if __name__ == "__main__":
-    run_inference("yolov8n.pt", "data/kaist/images")
+    run_inference("yolov8n.pt", "data/flir/images")

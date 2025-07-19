@@ -11,7 +11,7 @@ def main():
             (p["class"], p["box"][0], p["box"][1], p["box"][2], p["box"][3])
             for p in data.get("objects", [])
         ]
-        image_file = Path("data/kaist/images") / pred_file.with_suffix(".jpg").name
+        image_file = Path("data/flir/images") / pred_file.with_suffix(".jpg").name
         draw_boxes(image_file, boxes)
 
 
