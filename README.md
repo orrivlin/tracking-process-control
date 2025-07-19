@@ -1,6 +1,6 @@
 # Tracking Process Control
 
-This repository contains utilities to work with the KAIST multispectral pedestrian dataset and to run YOLOv8 detectors. It is structured to make it easy to experiment with reinforcement learning for tracking.
+This repository contains utilities to work with the **FLIR ADAS** thermal dataset and to run YOLOv8 detectors. It is structured to make it easy to experiment with reinforcement learning for tracking.
 
 ## Setup
 
@@ -8,16 +8,14 @@ This repository contains utilities to work with the KAIST multispectral pedestri
    ```bash
    pip install -r requirements.txt
    ```
-2. Download and extract the dataset (from the authors' OneDrive mirror):
+2. Download and extract the dataset:
    ```bash
-   python -m src.kaist.download
+   python -m src.flir.download
    ```
-   This will place the files under `data/kaist`. If the download fails,
-   follow the instructions at <https://soonminhwang.github.io/rgbt-ped-detection/>
-   to obtain the archive manually.
+   This will place the files under `data/flir`.
 3. Convert annotations to YOLO format:
    ```bash
-   python -m src.kaist.convert
+   python -m src.flir.convert
    ```
 
 ## Running YOLOv8
@@ -25,7 +23,7 @@ This repository contains utilities to work with the KAIST multispectral pedestri
 Use the `src/run_yolo.py` script to perform inference on the dataset:
 
 ```bash
-python -m src.run_yolo --model yolov8n.pt --data data/kaist/images
+python -m src.run_yolo --model yolov8n.pt --data data/flir/images
 ```
 
 Predictions will be saved under the `predictions/` directory.
@@ -40,9 +38,9 @@ python scripts/visualize_predictions.py
 
 ## Directory Structure
 
-- `src/kaist/` – dataset download and conversion utilities
+- `src/flir/` – dataset download and conversion utilities
 - `src/visualization/` – drawing helpers
 - `src/run_yolo.py` – simple YOLOv8 inference script
 - `scripts/` – additional runnable scripts
 
-The `data/` directory is ignored from version control and should contain the KAIST dataset once downloaded.
+The `data/` directory is ignored from version control and should contain the FLIR ADAS dataset once downloaded.
